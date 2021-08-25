@@ -48,7 +48,7 @@ markerFound = 0;
                 } else if (document.mozCancelFullScreen) {
                         document.mozCancelFullScreen();
                 } else if (document.msExitFullscreen) {
-                        document.msExitFullscreen();
+                        document.msExitFullscreen();z
                 }
                 fullbutton.setAttribute("src", "../fullscreen.png");
                 fullscreen = 0;
@@ -82,9 +82,33 @@ if (markerFound == 1) {
 });
 </script>
 <!-- END: Unity Compiled Events -->
+<style>
+    .arjs-loader {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .arjs-loader div {
+      text-align: center;
+      font-size: 1.25em;
+      color: white;
+    }
+  </style>
+  
 
 <!-- BEGIN: Middle HTML -->
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+      </div>
 
         <div style='position: absolute; bottom: 5px; left: 30px; width:100%; text-align: right; z-index: 1;'>
             <input type="image" id="fullscreen" src="../fullscreen.png" style='position: absolute; bottom: 0px; right: 35px;'>
